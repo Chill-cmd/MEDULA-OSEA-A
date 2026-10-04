@@ -6,8 +6,7 @@ const ROUNDS = [
   { n: "Ronda 1", title: "Inmunología", ready: true },
   { n: "Ronda 2", title: "Vacunas", ready: true },
   { n: "Ronda 3", title: "México", ready: true },
-  { n: "Ronda 4", title: "Decisión Clínica", ready: "partial" as const },
-  { n: "Final", title: "Jefe Final Clínico", ready: "partial" as const },
+  { n: "Ronda 4", title: "Decisión Clínica", ready: true },
 ];
 
 export const metadata = { title: "Vax Arena — Becker Lab" };
@@ -22,7 +21,7 @@ export default function ArenaPage() {
       <h1 className="mt-2 text-3xl font-black">VAX ARENA</h1>
       <p className="mx-auto mt-3 max-w-md text-sm text-[var(--foreground-muted)]">
         Cronómetro en vivo, puntuación por velocidad, leaderboard en tiempo real y un solo intento por
-        participante. Motor de tiempo real: Fase 4-5 del proyecto.
+        participante.
       </p>
 
       <div className="mt-8 space-y-2 text-left">
@@ -37,16 +36,10 @@ export default function ArenaPage() {
                 r.ready === true ? "text-[var(--success)]" : "text-[var(--warning)]"
               }`}
             >
-              {r.ready === true ? "Preguntas listas" : "Parcial — ver banco en content.ts"}
+              {r.ready === true ? "Preguntas listas" : "Pendiente"}
             </span>
           </Card>
         ))}
-      </div>
-
-      <div className="mt-8 rounded-xl border border-[var(--warning)]/30 bg-[var(--warning)]/5 p-4 text-left text-xs text-[var(--foreground-muted)]">
-        El motor multijugador en tiempo real (Supabase Realtime + validación de tiempo del lado del
-        servidor) corresponde a Fase 4-5. Requiere que conectes tu propio proyecto de Supabase — ver{" "}
-        <code className="font-tech">README.md</code>.
       </div>
 
       <LinkButton href="/arena/join" variant="danger" size="lg" className="mt-8">

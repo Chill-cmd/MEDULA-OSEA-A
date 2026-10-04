@@ -1,14 +1,16 @@
-import { PhasePlaceholder } from "@/components/layout/PhasePlaceholder";
+import { CardLabel } from "@/components/ui/Card";
+import { AdminQuestionsClient } from "./AdminQuestionsClient";
 
 export const metadata = { title: "Admin · Preguntas — Becker Lab" };
 
 export default function AdminQuestionsPage() {
   return (
-    <PhasePlaceholder
-      phase="Fase 5 · Panel de Fuentes de Contenido"
-      title="/admin/questions"
-      description="CRUD de preguntas (crear, editar, activar/desactivar, categorizar) con el campo source_reference obligatorio para trazabilidad académica — de qué parte de tu investigación sale cada pregunta."
-      needsSupabase
-    />
+    <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
+      <div className="mb-8 text-center">
+        <CardLabel>Fase 5 · Panel de Fuentes de Contenido</CardLabel>
+        <h1 className="mt-2 text-2xl font-bold">Banco de Preguntas de Vax Arena</h1>
+      </div>
+      <AdminQuestionsClient />
+    </div>
   );
 }
