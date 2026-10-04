@@ -55,6 +55,7 @@ export function ArenaGameClient() {
         setQuestionStartedAt(game.question_started_at);
         setPicked(null);
         setResult(null);
+        setRemaining(9999);
         submittingRef.current = false;
       }
     }
