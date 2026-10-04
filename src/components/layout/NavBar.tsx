@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/learn", label: "Aprender" },
+  { href: "/hematologia", label: "Hematología" },
   { href: "/mexico-schedule", label: "Esquema México" },
   { href: "/memory-simulator", label: "Simulador" },
   { href: "/clinical", label: "Casos clínicos" },
@@ -29,7 +30,7 @@ export function NavBar() {
             <Syringe size={16} strokeWidth={2.25} />
           </span>
           <span className="font-tech text-sm font-bold tracking-tight">
-            VAX<span className="text-[var(--accent-red)]">LAB</span> MX
+            BECKER <span className="text-[var(--accent-red)]">LAB</span>
           </span>
         </Link>
 

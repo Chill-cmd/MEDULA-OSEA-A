@@ -629,14 +629,60 @@ export const GLOSSARY: { term: string; definition: string }[] = [
   { term: "Nadir", definition: "Punto mínimo de descenso en las cuentas celulares sanguíneas posterior a la aplicación de quimioterapia o tratamientos mielosupresores." },
 ];
 
+export interface VaccinationClinicalCase {
+  id: string;
+  vignette: string;
+  question: string;
+  options: string[];
+  correct: number;
+  explain: string;
+  source: SourceTag;
+}
+
+/**
+ * Casos clínicos de vacunación — protocolo HSCT. Mismas preguntas ya
+ * verificadas de supabase/seed.sql (ronda "clinical"), reutilizadas aquí
+ * para el Clinical Decision Lab fusionado con los casos de hematología.
+ */
+export const CLINICAL_CASES_VACCINATION: VaccinationClinicalCase[] = [
+  {
+    id: "vax-c1",
+    vignette: "Un paciente recibió un trasplante de progenitores hematopoyéticos hace 4 meses.",
+    question: "¿Qué tipo de vacunas puede empezar a recibir?",
+    options: ["Virus vivos atenuados (SRP)", "Vacunas inactivadas (Influenza, COVID-19, Neumococo, Hexavalente/Tdap)", "Ninguna vacuna por 2 años", "Solo vacunas orales"],
+    correct: 1,
+    explain: "Entre 3 y 6 meses post-trasplante se inician las vacunas inactivadas; las APCs están en reactivación.",
+    source: "HTML",
+  },
+  {
+    id: "vax-c2",
+    vignette: "El mismo paciente, a los 8 meses post-trasplante.",
+    question: "¿Qué podría recibir adicionalmente?",
+    options: ["SRP y Varicela (vivos atenuados)", "RZV (Herpes Zóster recombinante)", "Ninguna vacuna adicional", "BCG"],
+    correct: 1,
+    explain: "Entre 6 y 12 meses post-trasplante corresponde la vacuna RZV (68.2% de efectividad).",
+    source: "HTML",
+  },
+  {
+    id: "vax-c3",
+    vignette: "El mismo paciente pregunta cuándo podría recibir finalmente SRP o Varicela.",
+    question: "¿Cuándo podría recibir vacunas de virus vivos atenuados?",
+    options: ["A los 6 meses", "Nunca", "Después de 24 meses, sin inmunosupresores y sin EICH activa", "A los 3 meses"],
+    correct: 2,
+    explain: "Los vivos atenuados solo se indican >24 meses post-trasplante, sin inmunosupresión y sin enfermedad injerto contra huésped.",
+    source: "HTML+PDF",
+  },
+];
+
 export const PROJECT_META = {
-  name: "VaxLab México",
-  tagline: "Immunology • Vaccination • Clinical Decision",
+  name: "Becker Lab",
+  tagline: "Inmunología • Vacunación • Decisión Clínica",
   conceptMessage: "Comprende la inmunidad. Aplica el esquema. Toma decisiones.",
   disclaimer:
     "Herramienta educativa. No sustituye recomendaciones clínicas oficiales ni valoración médica.",
   sources: [
     { label: "Evidencia Científica y Esquema Nacional de Vacunación México 2026", type: "HTML (archivo base)" },
     { label: "Inmunizaciones y ENVM", type: "PDF (hematopoyesis, inmunología general, NOM-253/NOM-EM-003)" },
+    { label: "Londoño MA, Vallejo JM, Manzano AC. Rev Colomb Radiol. 2015;26(2):4206-12 — más bibliografía estándar de fisiología/hematología/inmunología (Guyton y Hall, Abbas, Ganong)", type: "BIBLIOGRAFÍA (módulo Hematología y Médula Ósea)" },
   ],
 };

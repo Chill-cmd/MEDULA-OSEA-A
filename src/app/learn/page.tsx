@@ -1,23 +1,24 @@
 import Link from "next/link";
-import { Brain, FlaskConical, Map, FileQuestion, FolderOpen, Stethoscope } from "lucide-react";
+import { Brain, FlaskConical, Map, FileQuestion, FolderOpen, Stethoscope, Dna } from "lucide-react";
 import { Card, CardLabel } from "@/components/ui/Card";
 
 const MODULES = [
-  { href: "/immunology", icon: Brain, title: "Immunology Lab", desc: "La cascada antígeno → memoria, interactiva.", status: "Disponible" },
-  { href: "/vaccines", icon: FlaskConical, title: "Vaccine Explorer", desc: "Tipos de vacuna y su mecanismo.", status: "Disponible" },
-  { href: "/mexico-schedule", icon: Map, title: "Esquema México", desc: "Life Course Map + modo paciente.", status: "Disponible" },
-  { href: "/memory-simulator", icon: FileQuestion, title: "Memory Response Simulator", desc: "Primera exposición vs. refuerzo.", status: "Fase 2" },
+  { href: "/immunology", icon: Brain, title: "Laboratorio de Inmunología", desc: "La cascada antígeno → memoria, más CPA y MHC, interactiva.", status: "Disponible" },
+  { href: "/hematologia", icon: Dna, title: "Hematología y Médula Ósea", desc: "RM de médula ósea, hematopoyesis, eritrocitos, leucocitos y monocitos.", status: "Disponible" },
+  { href: "/vaccines", icon: FlaskConical, title: "Explorador de Vacunas", desc: "Tipos de vacuna y su mecanismo.", status: "Disponible" },
+  { href: "/mexico-schedule", icon: Map, title: "Esquema México", desc: "Mapa de etapas de vida + modo paciente.", status: "Disponible" },
+  { href: "/clinical", icon: Stethoscope, title: "Laboratorio de Decisión Clínica", desc: "Casos clínicos de hematología, inmunología y vacunación.", status: "Disponible" },
+  { href: "/memory-simulator", icon: FileQuestion, title: "Simulador de Respuesta de Memoria", desc: "Primera exposición vs. refuerzo.", status: "Fase 2" },
   { href: "/microlabs", icon: FolderOpen, title: "Microlab", desc: "Retos de 30-60 segundos.", status: "Fase 2" },
-  { href: "/clinical", icon: Stethoscope, title: "Clinical Decision Lab", desc: "Casos clínicos con consecuencias.", status: "Fase 3" },
 ];
 
-export const metadata = { title: "Aprender — VaxLab México" };
+export const metadata = { title: "Aprender — Becker Lab" };
 
 export default function LearnPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <CardLabel>Learn Mode</CardLabel>
-      <h1 className="mt-1 mb-2 text-2xl font-bold sm:text-3xl">Understand before you compete.</h1>
+      <CardLabel>Modo Aprender</CardLabel>
+      <h1 className="mt-1 mb-2 text-2xl font-bold sm:text-3xl">Comprende antes de competir.</h1>
       <p className="max-w-xl text-sm text-[var(--foreground-muted)]">
         Cada módulo usa únicamente contenido verificado de tu investigación. Sin cronómetro, a tu ritmo.
       </p>

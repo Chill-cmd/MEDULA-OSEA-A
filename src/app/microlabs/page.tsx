@@ -1,6 +1,6 @@
 import { PhasePlaceholder } from "@/components/layout/PhasePlaceholder";
 
-export const metadata = { title: "Microlab — VaxLab México" };
+export const metadata = { title: "Microlab — Becker Lab" };
 
 export default function MicrolabsPage() {
   return (

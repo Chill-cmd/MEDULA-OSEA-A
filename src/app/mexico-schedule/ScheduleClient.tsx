@@ -35,7 +35,7 @@ export function ScheduleClient() {
     <div className="space-y-8">
       <div className="flex flex-wrap items-center gap-2">
         <Button variant={mode === "map" ? "primary" : "secondary"} size="sm" onClick={() => setMode("map")}>
-          Life Course Map
+          Mapa de Etapas de Vida
         </Button>
         <Button variant={mode === "patient" ? "primary" : "secondary"} size="sm" onClick={() => setMode("patient")}>
           Modo: sigue a un paciente

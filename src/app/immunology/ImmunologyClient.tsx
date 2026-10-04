@@ -6,6 +6,7 @@ import { Card, CardLabel } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SourceBadge } from "@/components/ui/Badge";
 import { IMMUNOLOGY_CASCADE, INNATE_VS_ADAPTIVE, ACTIVE_VS_PASSIVE } from "@/lib/content";
+import { ApcSection } from "./ApcSection";
 
 export function ImmunologyClient() {
   const [activeId, setActiveId] = useState(IMMUNOLOGY_CASCADE[0].id);
@@ -16,7 +17,7 @@ export function ImmunologyClient() {
     <div className="space-y-10">
       {/* Cascade */}
       <div>
-        <CardLabel>Módulo 1 · Immunology Lab</CardLabel>
+        <CardLabel>Módulo 1 · Laboratorio de Inmunología</CardLabel>
         <h1 className="mt-1 mb-2 text-2xl font-bold sm:text-3xl">
           Antígeno → Memoria inmunológica
         </h1>
@@ -142,6 +143,8 @@ export function ImmunologyClient() {
           ))}
         </div>
       </div>
+
+      <ApcSection />
     </div>
   );
 }

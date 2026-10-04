@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { Brain, Swords, FlaskConical, Map, FileQuestion, Stethoscope, ArrowRight } from "lucide-react";
+import { Brain, Swords, FlaskConical, Map, FileQuestion, Stethoscope, ArrowRight, Dna } from "lucide-react";
 import { MoleculeNetwork } from "@/components/home/MoleculeNetwork";
 import { Card, CardLabel } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 import { KPIS, PROJECT_META } from "@/lib/content";
 
 const MODULES = [
-  { href: "/immunology", icon: Brain, title: "Immunology Lab", desc: "Antígeno → memoria inmunológica, paso a paso.", difficulty: "🟢 FOUNDATION" },
-  { href: "/vaccines", icon: FlaskConical, title: "Vaccine Explorer", desc: "Tipos de vacuna y su mecanismo inmunológico.", difficulty: "🟢 FOUNDATION" },
-  { href: "/mexico-schedule", icon: Map, title: "Esquema México", desc: "Life Course Vaccination Map, interactivo.", difficulty: "🟡 CLINICAL" },
-  { href: "/memory-simulator", icon: FileQuestion, title: "Memory Response", desc: "Por qué existen los refuerzos (booster).", difficulty: "🟡 CLINICAL" },
-  { href: "/clinical", icon: Stethoscope, title: "Clinical Decision Lab", desc: "Casos clínicos reales, con consecuencias.", difficulty: "🔴 CHALLENGE" },
-  { href: "/arena", icon: Swords, title: "Vax Arena", desc: "Compite en tiempo real. Un solo intento.", difficulty: "🔴 CHALLENGE" },
+  { href: "/immunology", icon: Brain, title: "Laboratorio de Inmunología", desc: "Antígeno → memoria inmunológica, más CPA y MHC.", difficulty: "🟢 BASE" },
+  { href: "/hematologia", icon: Dna, title: "Hematología y Médula Ósea", desc: "RM de médula ósea, hematopoyesis, eritrocitos y leucocitos.", difficulty: "🟢 BASE" },
+  { href: "/vaccines", icon: FlaskConical, title: "Explorador de Vacunas", desc: "Tipos de vacuna y su mecanismo inmunológico.", difficulty: "🟢 BASE" },
+  { href: "/mexico-schedule", icon: Map, title: "Esquema México", desc: "Mapa de vacunación por etapa de vida, interactivo.", difficulty: "🟡 CLÍNICO" },
+  { href: "/memory-simulator", icon: FileQuestion, title: "Respuesta de Memoria", desc: "Por qué existen los refuerzos (booster).", difficulty: "🟡 CLÍNICO" },
+  { href: "/clinical", icon: Stethoscope, title: "Laboratorio de Decisión Clínica", desc: "Casos clínicos de hematología, inmunología y vacunación.", difficulty: "🔴 DESAFÍO" },
+  { href: "/arena", icon: Swords, title: "Vax Arena", desc: "Compite en tiempo real. Un solo intento.", difficulty: "🔴 DESAFÍO" },
 ];
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
             {PROJECT_META.tagline}
           </span>
           <h1 className="mt-6 text-4xl font-black tracking-tight sm:text-6xl">
-            VAX<span className="text-[var(--accent-red)]">LAB</span> MÉXICO
+            BECKER <span className="text-[var(--accent-red)]">LAB</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-balance text-[var(--foreground-muted)] sm:text-lg">
             Del mecanismo inmunológico a la decisión clínica.
@@ -36,7 +37,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <LinkButton href="/learn" size="lg" variant="primary">
-              EXPLORAR VAXLAB <ArrowRight size={18} />
+              EXPLORAR BECKER LAB <ArrowRight size={18} />
             </LinkButton>
             <LinkButton href="/arena/join" size="lg" variant="danger">
               ENTRAR A VAX ARENA <Swords size={16} />
@@ -51,9 +52,9 @@ export default function Home() {
           <Card className="border-[var(--accent-blue-dim)]">
             <div className="flex items-center gap-2 text-[var(--accent-blue)]">
               <Brain size={18} />
-              <span className="font-tech text-xs uppercase tracking-wider">Learn Mode</span>
+              <span className="font-tech text-xs uppercase tracking-wider">Modo Aprender</span>
             </div>
-            <h3 className="mt-3 text-xl font-bold">Understand before you compete.</h3>
+            <h3 className="mt-3 text-xl font-bold">Comprende antes de competir.</h3>
             <p className="mt-2 text-sm text-[var(--foreground-muted)]">
               Explora la inmunología, el esquema nacional de vacunación y casos clínicos a tu ritmo, sin cronómetro.
             </p>
@@ -61,9 +62,9 @@ export default function Home() {
           <Card className="border-[var(--accent-red-dim)]">
             <div className="flex items-center gap-2 text-[var(--accent-red)]">
               <Swords size={18} />
-              <span className="font-tech text-xs uppercase tracking-wider">Arena Mode</span>
+              <span className="font-tech text-xs uppercase tracking-wider">Modo Arena</span>
             </div>
-            <h3 className="mt-3 text-xl font-bold">Prove what you know.</h3>
+            <h3 className="mt-3 text-xl font-bold">Demuestra lo que sabes.</h3>
             <p className="mt-2 text-sm text-[var(--foreground-muted)]">
               Competencia en vivo, con cronómetro, leaderboard y un solo intento por participante.
             </p>
@@ -74,7 +75,7 @@ export default function Home() {
       {/* MODULE GRID */}
       <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
         <CardLabel>Módulos</CardLabel>
-        <h2 className="mt-1 mb-6 text-2xl font-bold">Recorre VaxLab</h2>
+        <h2 className="mt-1 mb-6 text-2xl font-bold">Recorre Becker Lab</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {MODULES.map((m) => (
             <Link key={m.href} href={m.href}>
