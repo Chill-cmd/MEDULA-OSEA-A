@@ -3,14 +3,14 @@ import { Card, CardLabel } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 
 const ROUNDS = [
-  { n: "Round 1", title: "Immunology", ready: true },
-  { n: "Round 2", title: "Vaccines", ready: true },
-  { n: "Round 3", title: "México", ready: true },
-  { n: "Round 4", title: "Clinical Decision", ready: "partial" as const },
-  { n: "Final", title: "Clinical Boss", ready: "partial" as const },
+  { n: "Ronda 1", title: "Inmunología", ready: true },
+  { n: "Ronda 2", title: "Vacunas", ready: true },
+  { n: "Ronda 3", title: "México", ready: true },
+  { n: "Ronda 4", title: "Decisión Clínica", ready: "partial" as const },
+  { n: "Final", title: "Jefe Final Clínico", ready: "partial" as const },
 ];
 
-export const metadata = { title: "Vax Arena — VaxLab México" };
+export const metadata = { title: "Vax Arena — Becker Lab" };
 
 export default function ArenaPage() {
   return (
@@ -18,7 +18,7 @@ export default function ArenaPage() {
       <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent-red)]/15 text-[var(--accent-red)]">
         <Swords size={24} />
       </span>
-      <CardLabel>Competitive Mode</CardLabel>
+      <CardLabel>Modo Competitivo</CardLabel>
       <h1 className="mt-2 text-3xl font-black">VAX ARENA</h1>
       <p className="mx-auto mt-3 max-w-md text-sm text-[var(--foreground-muted)]">
         Cronómetro en vivo, puntuación por velocidad, leaderboard en tiempo real y un solo intento por
@@ -50,7 +50,7 @@ export default function ArenaPage() {
       </div>
 
       <LinkButton href="/arena/join" variant="danger" size="lg" className="mt-8">
-        ENTER THE ARENA
+        ENTRAR A LA ARENA
       </LinkButton>
     </div>
   );

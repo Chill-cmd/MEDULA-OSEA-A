@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VaxLab México — Immunology · Vaccination · Clinical Decision",
+  title: "Becker Lab — Inmunología · Vacunación · Decisión Clínica",
   description:
     "Plataforma educativa de inmunizaciones y esquema nacional de vacunación de México: laboratorio interactivo + competencia clínica en tiempo real (Vax Arena).",
 };

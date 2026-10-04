@@ -1,18 +1,18 @@
 import { Card, CardLabel } from "@/components/ui/Card";
 import { GLOSSARY, PROJECT_META } from "@/lib/content";
 
-export const metadata = { title: "Acerca de — VaxLab México" };
+export const metadata = { title: "Acerca de — Becker Lab" };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <CardLabel>About VaxLab</CardLabel>
+      <CardLabel>Acerca de Becker Lab</CardLabel>
       <h1 className="mt-1 mb-6 text-2xl font-bold sm:text-3xl">Acerca del proyecto</h1>
 
       <Card className="mb-4">
         <h2 className="font-bold">Propósito educativo</h2>
         <p className="mt-2 text-sm text-[var(--foreground-muted)]">
-          VaxLab México fusiona un laboratorio interactivo de inmunología/vacunación con una competencia
+          Becker Lab fusiona un laboratorio interactivo de inmunología/vacunación con una competencia
           clínica en tiempo real (Vax Arena), siguiendo el ciclo: aprender → competir → detectar
           debilidades → volver a aprender.
         </p>
@@ -37,8 +37,8 @@ export default function AboutPage() {
       <Card className="mb-4">
         <h2 className="font-bold">Metodología</h2>
         <p className="mt-2 text-sm text-[var(--foreground-muted)]">
-          Construcción por fases (Foundation → VaxLab → Clinical Lab → Vax Arena → Realtime/Admin →
-          Polish), priorizando siempre la trazabilidad del dato médico sobre la velocidad de entrega.
+          Construcción por fases (Fundamentos → Becker Lab → Laboratorio Clínico → Vax Arena → Tiempo
+          Real/Admin → Pulido final), priorizando siempre la trazabilidad del dato médico sobre la velocidad de entrega.
         </p>
       </Card>
 

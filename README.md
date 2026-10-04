@@ -1,11 +1,11 @@
-# VaxLab México
+# Becker Lab
 
-> Immunology • Vaccination • Clinical Decision
+> Inmunología • Vacunación • Decisión Clínica
 > *"Comprende la inmunidad. Aplica el esquema. Toma decisiones."*
 
-Plataforma educativa que fusiona **VaxLab** (laboratorio interactivo de inmunología y vacunación) con **Vax Arena** (competencia clínica en tiempo real) en una sola experiencia: aprender → competir → detectar debilidades → volver a aprender.
+Plataforma educativa que fusiona **Becker Lab** (laboratorio interactivo de inmunología y vacunación) con **Vax Arena** (competencia clínica en tiempo real) en una sola experiencia: aprender → competir → detectar debilidades → volver a aprender.
 
-**Estado actual: Fase 1 (Foundation) + parte de Fase 2 (VaxLab), completas y funcionando.** El resto está planeado en fases, con placeholders honestos en la app (nunca enlaces muertos) que explican exactamente qué falta y por qué.
+**Estado actual: Fase 1 (Fundamentos) + parte de Fase 2 (Becker Lab), completas y funcionando.** El resto está planeado en fases, con placeholders honestos en la app (nunca enlaces muertos) que explican exactamente qué falta y por qué.
 
 ---
 
@@ -36,7 +36,7 @@ Donde algo que el diseño original pedía **no** aparece en ninguno de los dos, 
 |---|---|
 | `/` | ✅ Completo — hero, Learn/Arena mode, módulos, KPIs |
 | `/learn` | ✅ Completo — hub de módulos |
-| `/immunology` | ✅ Completo — cascada interactiva + comparador innata/adaptativa + activa/pasiva |
+| `/immunology` | ✅ Completo — cascada interactiva + comparador innata/adaptativa |
 | `/vaccines` | ✅ Completo — 2 tarjetas (atenuadas, inactivadas) |
 | `/mexico-schedule` | ✅ Completo — Life Course Map + Modo "sigue a un paciente" |
 | `/about` | ✅ Completo — fuentes, metodología, glosario, disclaimer |
@@ -62,8 +62,8 @@ ENTRA → EXPLORA (Learn Mode) → COMPRENDE (Immunology/Vaccines) → PRACTICA 
 
 | Fase | Contenido | Requiere Supabase |
 |---|---|---|
-| ✅ 1 — Foundation | Next.js, design system, navegación, Home | No |
-| 🟡 2 — VaxLab | Immunology/Vaccines/México (listos) + Memory Simulator + Microlabs (pendientes) | No |
+| ✅ 1 — Fundamentos | Next.js, design system, navegación, Home | No |
+| 🟡 2 — Becker Lab | Inmunología/Vacunas/México (listos) + Simulador de Memoria + Microlabs (pendientes) | No |
 | ⬜ 3 — Clinical Lab | Casos clínicos (caso ancla: protocolo HSCT) | No |
 | ⬜ 4 — Vax Arena | Join/Waiting/Game/Results, cronómetro server-side, scoring, intento único | **Sí** |
 | ⬜ 5 — Realtime + Admin | Supabase Realtime, Control Room, CRUD de preguntas, QR | **Sí** |
