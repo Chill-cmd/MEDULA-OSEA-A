@@ -69,17 +69,6 @@ export function ArenaGameClient() {
 
   const current = index !== null ? questions[index] : null;
 
-  useEffect(() => {
-    if (!current || !questionStartedAt) return;
-    const tick = () => {
-      const elapsed = (Date.now() - new Date(questionStartedAt).getTime()) / 1000;
-      setRemaining(Math.max(0, current.time_limit_seconds - elapsed));
-    };
-    tick();
-    const t = setInterval(tick, 100);
-    return () => clearInterval(t);
-  }, [current, questionStartedAt]);
-
   const submit = useCallback(
     async (option: string | null) => {
       if (submittingRef.current || !current || !questionStartedAt) return;
@@ -98,11 +87,26 @@ export function ArenaGameClient() {
     [current, questionStartedAt],
   );
 
+  // Single source of truth for the countdown: computes the remaining time AND
+  // decides to auto-submit a null answer in the same tick, so there is no
+  // separate effect that can read a stale "remaining" value from the
+  // previous question and fire a premature submit.
   useEffect(() => {
-    if (remaining <= 0 && !picked && current) {
-      Promise.resolve().then(() => submit(null));
-    }
-  }, [remaining, picked, current, submit]);
+    if (!current || !questionStartedAt) return;
+    let timedOut = false;
+    const tick = () => {
+      const elapsed = (Date.now() - new Date(questionStartedAt).getTime()) / 1000;
+      const r = Math.max(0, current.time_limit_seconds - elapsed);
+      setRemaining(r);
+      if (r <= 0 && !timedOut) {
+        timedOut = true;
+        submit(null);
+      }
+    };
+    tick();
+    const t = setInterval(tick, 100);
+    return () => clearInterval(t);
+  }, [current, questionStartedAt, submit]);
 
   if (notReady) {
     return (
