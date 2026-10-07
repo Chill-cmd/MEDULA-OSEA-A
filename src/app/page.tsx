@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Brain, Swords, FlaskConical, Map, FileQuestion, Stethoscope, ArrowRight, Dna } from "lucide-react";
+import { Brain, Swords, FlaskConical, Map, FileQuestion, Stethoscope, ArrowRight, Dna, Users } from "lucide-react";
 import { MoleculeNetwork } from "@/components/home/MoleculeNetwork";
 import { Card, CardLabel } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
@@ -13,6 +13,7 @@ const MODULES = [
   { href: "/memory-simulator", icon: FileQuestion, title: "Respuesta de Memoria", desc: "Por qué existen los refuerzos (booster).", difficulty: "🟡 CLÍNICO" },
   { href: "/clinical", icon: Stethoscope, title: "Laboratorio de Decisión Clínica", desc: "Casos clínicos de hematología, inmunología y vacunación.", difficulty: "🔴 DESAFÍO" },
   { href: "/arena", icon: Swords, title: "Vax Arena", desc: "Compite en tiempo real. Un solo intento.", difficulty: "🔴 DESAFÍO" },
+  { href: "/arena-1v1", icon: Users, title: "Arena Becker 1v1", desc: "Duelo cara a cara, ideal para proyectar en clase.", difficulty: "🔴 DESAFÍO" },
 ];
 
 export default function Home() {

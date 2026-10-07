@@ -15,6 +15,7 @@ const LINKS = [
   { href: "/clinical", label: "Casos clínicos" },
   { href: "/microlabs", label: "Microlab" },
   { href: "/arena", label: "Vax Arena" },
+  { href: "/arena-1v1", label: "Arena 1v1" },
   { href: "/about", label: "Acerca de" },
 ];
 
